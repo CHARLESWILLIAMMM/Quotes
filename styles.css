@@ -292,6 +292,21 @@ body {
   transform: scale(0.95);
 }
 
+/* Skip button — subtle ghost style */
+.btn--skip {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn--skip:hover,
+.btn--skip:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-dim);
+  border-color: rgba(255, 255, 255, 0.22);
+  outline: none;
+}
+
 /* Hide share button when Web Share API is unavailable */
 .btn--share.hidden {
   display: none;
@@ -344,5 +359,24 @@ body {
   .btn {
     transition: none;
   }
+  .quote--animate {
+    animation: none;
+  }
+}
+
+/* ── Quote fade-in on skip ────────────────────────────────────── */
+@keyframes quoteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote--animate {
+  animation: quoteFadeIn 0.35s var(--ease) both;
 }
 

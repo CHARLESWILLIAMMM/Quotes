@@ -44,26 +44,7 @@ Your site is then live at:
 
 - 📖 **44 quotes** from Musashi, Kafka, Dostoevsky, Nietzsche, Camus, Maltz, Aristotle, and more
 - 🗓️ One quote per day — same quote all day, new one at midnight
-- 📋 **Copy** button (clipboard API with fallback)
-- 📤 **Share** button (Web Share API on supported devices)
-- 📱 **PWA** — install to home screen, works fully offline
-- 🌙 Dark, immersive design with gold accents
-
-## Local development
-
-```bash
-# Serve with any static server, e.g.:
-python3 -m http.server 8080
-# then open http://localhost:8080
-```
-
-
----
-
-## Features
-
-- 📖 **44 quotes** from Musashi, Kafka, Dostoevsky, Nietzsche, Camus, Maltz, Aristotle, and more
-- 🗓️ One quote per day — same quote all day, new one at midnight
+- ⏭️ **Skip** button — browse to the next quote whenever you want
 - 📋 **Copy** button (clipboard API with fallback)
 - 📤 **Share** button (Web Share API on supported devices)
 - 📱 **PWA** — install to home screen, works fully offline

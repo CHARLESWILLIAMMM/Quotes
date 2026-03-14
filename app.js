@@ -192,6 +192,22 @@ function getTodayIndex() {
   return (now.getFullYear() * 1000 + dayOfYear) % QUOTES.length;
 }
 
+/* ── Session index — persists skips across page refreshes ────── */
+const SESSION_KEY = 'thinker-quote-idx';
+
+function getCurrentIndex() {
+  const stored = sessionStorage.getItem(SESSION_KEY);
+  if (stored !== null) {
+    const n = parseInt(stored, 10);
+    if (!isNaN(n) && n >= 0 && n < QUOTES.length) return n;
+  }
+  return getTodayIndex();
+}
+
+function setCurrentIndex(n) {
+  sessionStorage.setItem(SESSION_KEY, String(n));
+}
+
 function formatDate(date) {
   return date.toLocaleDateString(undefined, {
     weekday: 'long',
@@ -202,14 +218,24 @@ function formatDate(date) {
 }
 
 /* ── Render quote ────────────────────────────────────────────── */
-function renderQuote() {
-  const idx    = getTodayIndex();
+function renderQuote(animate) {
+  const idx    = getCurrentIndex();
   const today  = QUOTES[idx];
   const date   = new Date();
 
   document.getElementById('dateLabel').textContent   = formatDate(date);
-  document.getElementById('quoteText').textContent   = today.text;
   document.getElementById('quoteAuthor').textContent = today.author;
+
+  const quoteEl = document.getElementById('quoteText');
+  quoteEl.textContent = today.text;
+
+  // Trigger fade-in animation on skip
+  if (animate) {
+    quoteEl.classList.remove('quote--animate');
+    // Force reflow so the class removal takes effect before re-adding
+    void quoteEl.offsetWidth;
+    quoteEl.classList.add('quote--animate');
+  }
 
   // Show quote number out of total
   const indexEl = document.getElementById('quoteIndex');
@@ -273,6 +299,13 @@ if (navigator.share) {
   // Hide share button when Web Share API is not supported
   shareBtn.classList.add('hidden');
 }
+
+/* ── Skip button ─────────────────────────────────────────────── */
+document.getElementById('skipBtn').addEventListener('click', () => {
+  const next = (getCurrentIndex() + 1) % QUOTES.length;
+  setCurrentIndex(next);
+  renderQuote(true);
+});
 
 /* ── Register service worker ─────────────────────────────────── */
 if ('serviceWorker' in navigator) {
