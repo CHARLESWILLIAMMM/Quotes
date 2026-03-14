@@ -6,31 +6,57 @@ A minimalist, dark-themed Progressive Web App (PWA) that shows a new inspiring q
 
 ---
 
-## 🚀 How to Enable the Live Site (one-time setup — 2 minutes)
+## 🚀 How to Go Live — 3 Steps
 
-The deployment workflow automatically pushes to the `gh-pages` branch on every commit.
-You just need to point GitHub Pages at that branch once:
+Everything is ready. You just need to do these steps **once**, in order:
 
-### Step 1 — Go to Settings → Pages
+### Step 1 — Merge this PR
 
-Open this link:
+Click **"Merge pull request"** on the PR page.
+This deploys the code and creates the `gh-pages` branch automatically.
+
+### Step 2 — Enable GitHub Pages (while the workflow runs)
+
+Open this link in your browser:
 👉 **https://github.com/CHARLESWILLIAMMM/Quotes/settings/pages**
 
-### Step 2 — Set Source to the `gh-pages` branch
-
 Under **"Build and deployment"**:
-- Source: **Deploy from a branch**
-- Branch: **`gh-pages`** / `/ (root)`
+- Source → **Deploy from a branch**
+- Branch → **`gh-pages`** / `/ (root)`
 
 Click **Save**.
 
-### Step 3 — Wait ~60 seconds
+### Step 3 — Check the Actions tab
 
-GitHub Pages will go live at:
+Go to the **Actions** tab: https://github.com/CHARLESWILLIAMMM/Quotes/actions
+
+Wait for the "Deploy to GitHub Pages" workflow to show a green ✓.
+
+Your site is then live at:
 🌐 **https://charleswilliammm.github.io/Quotes/**
 
-> **Already did this but still seeing 404?** Go to the **Actions** tab and check the latest
-> "Deploy to GitHub Pages" workflow run — it must complete successfully first (green ✓).
+> ⚠️ **Important:** The site URL uses your GitHub username in **all lowercase** —
+> `charleswilliammm` (not `CHARLESWILLIAMMM`). The URL is case-sensitive.
+
+---
+
+## Features
+
+- 📖 **44 quotes** from Musashi, Kafka, Dostoevsky, Nietzsche, Camus, Maltz, Aristotle, and more
+- 🗓️ One quote per day — same quote all day, new one at midnight
+- 📋 **Copy** button (clipboard API with fallback)
+- 📤 **Share** button (Web Share API on supported devices)
+- 📱 **PWA** — install to home screen, works fully offline
+- 🌙 Dark, immersive design with gold accents
+
+## Local development
+
+```bash
+# Serve with any static server, e.g.:
+python3 -m http.server 8080
+# then open http://localhost:8080
+```
+
 
 ---
 
