@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0c1d" />
+    <title>Redirecting… · The Thinker's Daily Quote</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        min-height: 100dvh;
+        background: #0d0c1d;
+        color: #eae6df;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 { font-size: 1.1rem; opacity: 0.6; letter-spacing: 0.12em; text-transform: uppercase; }
+      p  { margin-top: 1rem; opacity: 0.4; font-size: 0.85rem; }
+    </style>
+    <script>
+      // GitHub Pages serves 404.html for any unknown path.
+      // Redirect back to the app root, detecting the repo name dynamically
+      // so this works even in forks with a different repository name.
+      const pathParts = location.pathname.split('/').filter(Boolean);
+      const repoBase  = pathParts.length > 0 ? '/' + pathParts[0] + '/' : '/';
+      const dest      = location.origin + repoBase;
+      location.replace(dest);
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Redirecting…</h1>
+      <p>Taking you to The Thinker's Daily Quote</p>
+    </div>
+  </body>
+</html>
