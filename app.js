@@ -135,6 +135,48 @@ const QUOTES = [
   {
     text: "In the middle of every difficulty lies opportunity.",
     author: "Albert Einstein"
+  },
+  // Albert Camus
+  {
+    text: "In the depth of winter, I finally learned that within me there lay an invincible summer.",
+    author: "Albert Camus"
+  },
+  {
+    text: "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.",
+    author: "Albert Camus"
+  },
+  {
+    text: "You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
+    author: "Albert Camus"
+  },
+  {
+    text: "Don't walk in front of me – I may not follow. Don't walk behind me – I may not lead. Walk beside me – just be my friend.",
+    author: "Albert Camus"
+  },
+  {
+    text: "Man is the only creature who refuses to be what he is.",
+    author: "Albert Camus"
+  },
+  // Maxwell Maltz – Psycho-Cybernetics
+  {
+    text: "You make mistakes. Mistakes don't make you.",
+    author: "Maxwell Maltz"
+  },
+  {
+    text: "Low self-esteem is like driving through life with your hand-brake on.",
+    author: "Maxwell Maltz"
+  },
+  {
+    text: "Close scrutiny will show that most 'crisis situations' are opportunities to either advance, or stay where you are.",
+    author: "Maxwell Maltz"
+  },
+  {
+    text: "Our self-image and our habits tend to go together. Change one and you will automatically change the other.",
+    author: "Maxwell Maltz"
+  },
+  {
+    text: "The greatest mistake a man can make is to be afraid of making one.",
+    author: "Maxwell Maltz"
   }
 ];
 
