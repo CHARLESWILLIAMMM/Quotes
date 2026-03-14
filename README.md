@@ -8,24 +8,29 @@ A minimalist, dark-themed Progressive Web App (PWA) that shows a new inspiring q
 
 ## 🚀 How to Enable the Live Site (one-time setup — 2 minutes)
 
-The site is already built and ready. You just need to turn on GitHub Pages once:
+The deployment workflow automatically pushes to the `gh-pages` branch on every commit.
+You just need to point GitHub Pages at that branch once:
 
 ### Step 1 — Go to Settings → Pages
 
 Open this link:
 👉 **https://github.com/CHARLESWILLIAMMM/Quotes/settings/pages**
 
-### Step 2 — Set the Source to "GitHub Actions"
+### Step 2 — Set Source to the `gh-pages` branch
 
-Under **"Build and deployment"**, change **Source** to **"GitHub Actions"** and click **Save**.
+Under **"Build and deployment"**:
+- Source: **Deploy from a branch**
+- Branch: **`gh-pages`** / `/ (root)`
 
-### Step 3 — Merge this PR
+Click **Save**.
 
-After merging this PR to `main`, the workflow runs automatically and your site is live at:
+### Step 3 — Wait ~60 seconds
+
+GitHub Pages will go live at:
 🌐 **https://charleswilliammm.github.io/Quotes/**
 
-> **Already enabled Pages but still seeing 404?** Go to the **Actions** tab → latest
-> "Deploy to GitHub Pages" run → click **Re-run all jobs**.
+> **Already did this but still seeing 404?** Go to the **Actions** tab and check the latest
+> "Deploy to GitHub Pages" workflow run — it must complete successfully first (green ✓).
 
 ---
 
