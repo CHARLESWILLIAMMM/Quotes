@@ -207,9 +207,15 @@ function renderQuote() {
   const today  = QUOTES[idx];
   const date   = new Date();
 
-  document.getElementById('dateLabel').textContent  = formatDate(date);
-  document.getElementById('quoteText').textContent  = today.text;
+  document.getElementById('dateLabel').textContent   = formatDate(date);
+  document.getElementById('quoteText').textContent   = today.text;
   document.getElementById('quoteAuthor').textContent = today.author;
+
+  // Show quote number out of total
+  const indexEl = document.getElementById('quoteIndex');
+  if (indexEl) {
+    indexEl.textContent = `Quote ${idx + 1} of ${QUOTES.length}`;
+  }
 }
 
 /* ── Toast helper ────────────────────────────────────────────── */

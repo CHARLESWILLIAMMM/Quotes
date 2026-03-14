@@ -2,10 +2,11 @@
   "name": "The Thinker's Daily Quote",
   "short_name": "Daily Quote",
   "description": "A new inspiring quote from great philosophers and writers, every single day.",
-  "start_url": "./",
+  "start_url": "/Quotes/",
+  "scope": "/Quotes/",
   "display": "standalone",
-  "background_color": "#f5f0e8",
-  "theme_color": "#f5f0e8",
+  "background_color": "#0d0c1d",
+  "theme_color": "#0d0c1d",
   "orientation": "any",
   "icons": [
     {

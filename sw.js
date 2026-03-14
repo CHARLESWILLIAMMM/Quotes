@@ -1,5 +1,5 @@
 /* ── Service Worker – The Thinker's Daily Quote ──────────────── */
-const CACHE_NAME = 'thinker-quote-v1';
+const CACHE_NAME = 'thinker-quote-v2';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -8,7 +8,8 @@ const ASSETS_TO_CACHE = [
   './app.js',
   './manifest.json',
   './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/icon-512.png',
+  'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500&display=swap'
 ];
 
 /* ── Install: pre-cache all static assets ────────────────────── */
@@ -45,11 +46,13 @@ self.addEventListener('fetch', event => {
         }
         return fetch(event.request)
           .then(response => {
-            // Only cache valid same-origin responses
+            // Only cache successful same-origin or CORS responses.
+            // Skip opaque responses (cross-origin without CORS headers)
+            // as they mask errors and waste cache space.
             if (
               !response ||
               response.status !== 200 ||
-              response.type === 'opaque'
+              (response.type !== 'basic' && response.type !== 'cors')
             ) {
               return response;
             }
