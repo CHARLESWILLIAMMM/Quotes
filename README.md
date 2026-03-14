@@ -4,6 +4,31 @@ A minimalist, dark-themed Progressive Web App (PWA) that shows a new inspiring q
 
 **Live site:** https://charleswilliammm.github.io/Quotes/
 
+---
+
+## 🚀 How to Enable the Live Site (one-time setup — 2 minutes)
+
+The site is already built and ready. You just need to turn on GitHub Pages once:
+
+### Step 1 — Go to Settings → Pages
+
+Open this link:
+👉 **https://github.com/CHARLESWILLIAMMM/Quotes/settings/pages**
+
+### Step 2 — Set the Source to "GitHub Actions"
+
+Under **"Build and deployment"**, change **Source** to **"GitHub Actions"** and click **Save**.
+
+### Step 3 — Merge this PR
+
+After merging this PR to `main`, the workflow runs automatically and your site is live at:
+🌐 **https://charleswilliammm.github.io/Quotes/**
+
+> **Already enabled Pages but still seeing 404?** Go to the **Actions** tab → latest
+> "Deploy to GitHub Pages" run → click **Re-run all jobs**.
+
+---
+
 ## Features
 
 - 📖 **44 quotes** from Musashi, Kafka, Dostoevsky, Nietzsche, Camus, Maltz, Aristotle, and more
@@ -13,12 +38,6 @@ A minimalist, dark-themed Progressive Web App (PWA) that shows a new inspiring q
 - 📱 **PWA** — install to home screen, works fully offline
 - 🌙 Dark, immersive design with gold accents
 
-## Enable GitHub Pages (one-time setup)
-
-1. Go to **Settings → Pages** in this repository
-2. Under **Source**, select **GitHub Actions**
-3. The next push to `main` will deploy the site automatically
-
 ## Local development
 
 ```bash
@@ -26,3 +45,4 @@ A minimalist, dark-themed Progressive Web App (PWA) that shows a new inspiring q
 python3 -m http.server 8080
 # then open http://localhost:8080
 ```
+

@@ -1,4 +1,6 @@
 /* ── Service Worker – The Thinker's Daily Quote ──────────────── */
+// Cache version: bump this whenever the app assets change to force
+// all clients to get the new files.  Starts at v2 (v1 was the initial release).
 const CACHE_NAME = 'thinker-quote-v2';
 
 const ASSETS_TO_CACHE = [
